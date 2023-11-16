@@ -10,7 +10,7 @@ const Animacion3 = () => {
             animacion, {
                 toValue: 40, // valor al que llega
                 duration: 500, // cantidad de tiempo en llegar
-                useNativeDriver: false,
+                useNativeDriver: true,
             }
         ).start(); // iniciar la animación
     }, []);
