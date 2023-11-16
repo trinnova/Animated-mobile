@@ -5,15 +5,20 @@ const Animacion5 = () => {
     const [ animacion ] = useState( new Animated.Value(1) );
 
     const presionarBtn = () => {
-        Animated.spring( animacion,
-            {
-                toValue: .8,
+        Animated.spring( animacion, {
+                toValue: .8
             }
         ).start();
     };
 
     const soltarBtn = () => {
-
+        Animated.spring( animacion, 
+            {
+                toValue: 1,
+                friction: 4, // más bajo, mayor rebote
+                tension: 10, // más bajo, más suave el rebote
+            }
+        ).start();
     };
 
     const estiloAnimacion = {
