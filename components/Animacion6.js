@@ -6,30 +6,32 @@ const Animacion6 = () => {
     const [ animacion2 ] = useState( new Animated.Value(-50) );
 
     useEffect( () => {
-        Animated.sequence([
-            Animated.timing(animacion2, {
-                toValue: -30,
-                duration: 500,
-                useNativeDriver: false,
-            }),
-
-            Animated.timing(animacion1, {
-                toValue: 60,
-                duration: 500,
-                useNativeDriver: false,
-            }),
-            Animated.timing(animacion2, {
-                toValue: 30,
-                duration: 500,
-                useNativeDriver: false,
-            }),
-
-            Animated.timing(animacion1, {
-                toValue: 0,
-                duration: 500,
-                useNativeDriver: false,
-            }),
-        ]).start();
+        Animated.loop(
+            Animated.sequence([
+                Animated.timing(animacion2, {
+                    toValue: -30,
+                    duration: 0,
+                    useNativeDriver: false,
+                }),
+    
+                Animated.timing(animacion1, {
+                    toValue: 60,
+                    duration: 500,
+                    useNativeDriver: false,
+                }),
+                Animated.timing(animacion2, {
+                    toValue: 30,
+                    duration: 500,
+                    useNativeDriver: false,
+                }),
+    
+                Animated.timing(animacion1, {
+                    toValue: 0,
+                    duration: 500,
+                    useNativeDriver: false,
+                }),
+            ])
+        ).start();
 
     }, []);
 
